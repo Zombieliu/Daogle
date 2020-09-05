@@ -250,6 +250,7 @@ export default {
   .el-main {
     background-color: #E9EEF3;
     color: #333;
+    overflow-x: hidden;
     text-align: center;
     line-height: 160px;
   }
@@ -450,6 +451,8 @@ export default {
   /* banner-main */
   .banner-main {
     background: rgb(201, 196, 196);
+    overflow-x: hidden;
+    overflow-y: hidden;
     padding: 0px;
     height: 340px;
   }
