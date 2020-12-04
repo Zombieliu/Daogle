@@ -111,12 +111,12 @@
     <el-main class="vide-main">
       <h1>热门视频</h1>
       <el-row :gutter="20">
-        <el-col :span="6" v-for="o in 4" :key="o">
+        <el-col :span="6" v-for="video in videos" :key="video.title">
           <el-card body-style="height:280px; padding:0px; position:relative;">
             <!--            <el-image :src="video"></el-image>-->
-            <iframe :src="video" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"
+            <iframe :src="video.url" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"
                     width="351px" height=197px></iframe>
-            <span class="video-main-title"> HackDAO 黑客马拉松
+            <span class="video-main-title"> {{video.title}}
             </span>
             <div class="hot-bottom" style="margin-top: 80px">
               <div style="color: #999999;"><i class="el-icon-star-off"></i>4794</div>
@@ -207,8 +207,25 @@ export default {
       doc: "Aragon 是以太坊区块链上的一个可以让任何人创建和管理任意组织，如公司、开源项目、非政府组织、基金会、对冲基金等的 DApp",
       daogle: require("../assets/daogle.png"),
       buttomLogo: require("../assets/buttom.png"),
+      videos: [
+        {
+          url: "https://player.bilibili.com/player.html?aid=244100879&bvid=BV1hv411v7DE&cid=220202984&page=1",
+          title: "HackDAO 黑客马拉松",
+        },
+        {
+          url: "https://player.bilibili.com/player.html?aid=201747872&bvid=BV1zh411d7zo&cid=226533286&page=4",
+          title: "HackDAO 公开课"
+        },
+        {
+          url: "https://player.bilibili.com/player.html?aid=201747872&bvid=BV1zh411d7zo&cid=227104242&page=5",
+          title: "HackDAO 线上AMA"
+        },
+        {
+          url: "https://player.bilibili.com/player.html?aid=201747872&bvid=BV1zh411d7zo&cid=227640429&page=6",
+          title: "HackDAO 头脑风暴"
+        }
+      ],
       img: "https://assets.website-files.com/5e997428d0f2eb13a90aec8c/5e99778310343ed2dfe89331_logo_big.svg",
-      video: "https://player.bilibili.com/player.html?aid=244100879&bvid=BV1hv411v7DE&cid=220202984&page=1",
     }
   }
 }
